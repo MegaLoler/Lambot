@@ -11,4 +11,4 @@ Command line dependencies: `chibi-scheme`
 
 ## Run
 
-Put the client token inside a file called `token.txt` and then do this: node `lambot.js`
+Put the client token inside a file called `token.txt` and then do this: `node lambot.js`
