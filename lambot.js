@@ -1,6 +1,7 @@
 // todo:
 // maybe make persistant processes for each server, instead of executing single expressions only?
 // suppress undefined returns?
+// proper sandboxing
 //
 // join link:
 // https://discordapp.com/oauth2/authorize?client_id=366115309628686337&scope=bot&permissions=0
@@ -50,7 +51,7 @@ client.on("message", (message) => {
 	const dm = !message.guild;
 	const repl_chan = message.channel.name === "repl";
 	const triggered = content.startsWith(trigger);
-	if(content.length || dm || repl_chan || triggered)
+	if(content.length && (dm || repl_chan || triggered))
 	{
 		const msg = triggered ? content.slice(trigger.length) : content;
 		const block = msg.indexOf("```") != -1;
